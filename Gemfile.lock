@@ -8,6 +8,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    awesome_print (1.6.1)
     backports (3.6.8)
     builder (3.2.2)
     capybara (2.5.0)
@@ -136,6 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   builder (~> 3.0)
   coffee-script
   jbuilder

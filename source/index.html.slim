@@ -2,4 +2,9 @@
 title: StartupsInParis
 ---
 
-p Do some funky stuff
+- startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
+- startups.each do |s|
+  h1 = s["name"]
+  p = s["summary"]
+  br
+

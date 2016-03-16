@@ -1,4 +1,4 @@
 desc "Make coffee"
-task :make_coffee do
-  puts "Making coffeeeeee"
+task :build_startups do
+  JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
 end
