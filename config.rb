@@ -8,7 +8,10 @@ Time.zone = "Paris"
 # Page options, layouts, aliases and proxies
 ###
 
-set :markdown_engine, 'slim'
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+
 activate :directory_indexes
 
 # Per-page layout changes:
