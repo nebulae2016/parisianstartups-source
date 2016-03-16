@@ -12,8 +12,6 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-activate :directory_indexes
-
 # Per-page layout changes:
 #
 # With no layout
@@ -30,7 +28,6 @@ page '/*.txt', layout: false
 
 # General configuration
 
-# Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
 end
@@ -45,6 +42,17 @@ end
 #     "Helping"
 #   end
 # end
+
+activate :directory_indexes
+
+startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
+startups.each do |s|
+  proxy "/#{s["name"].downcase.split(" ").join("-")}/index.html", "/startup-template.html", :locals => {  name:         s["name"],
+                                                                                                                            summary:      s["summary"],
+                                                                                                                            founders:     s["founders"],
+                                                                                                                            website_url:  s["website_url"] }, ignore: true
+end
+
 
 # Build-specific configuration
 configure :build do
