@@ -1,5 +1,14 @@
 h1 = name
-h3 = founders
+- market_domain.split(",").each do |tag|
+  span class="domain-tag" = tag
 p = summary
+h4 = founders
+h4 = address
+h4 = employee_count.to_s + " employees"
+br
 = link_to 'Link to website', website_url
+br
+= link_to 'Link to Twitter', twitter_url
+br
+= image_tag logo_url
 
