@@ -8,7 +8,6 @@ Time.zone = "Paris"
 # Page options, layouts, aliases and proxies
 ###
 
-set :site_url, ""
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
@@ -62,20 +61,15 @@ startups.each do |s|
         ignore: true
 end
 
-
-# Build-specific configuration
 configure :build do
   activate :relative_assets
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_javascript
+  set :http_prefix, '/startupsofparis'
 end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
   deploy.commit_message = "Automated build & deploy at #{Time.now}"
   deploy.build_before = true
-  set :site_url, "/startupsofparis"
 end
