@@ -1,12 +1,12 @@
 ---
 title: StartupsInParis
 ---
-= link_to 'Submit a new startup', '/submit'
+= link_to 'Submit a new startup', "#{current_page.url}submit"
 hr
 - startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
 - startups.each do |s|
   h1 = s["name"]
   p = s["summary"]
-  = link_to 'See more', "/#{s["name"].downcase.split(" ").join("-")}"
+  = link_to 'See more', current_page.url + s["name"].downcase.split(" ").join("-")
   br
 
