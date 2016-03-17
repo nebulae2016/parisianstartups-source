@@ -1,0 +1,45 @@
+javascript:
+  !function(e,t){"function"==typeof define&&define.amd?define(t):"object"==typeof module&&module.exports?module.exports=t():e.H5F=t()}(this,function(){var e,t,a,i,n,r,l,s,u,o,d,c,v,p,f,m,b,y,h,g,w,C,N,A,E,$,x=document,k=x.createElement("input"),q=/^[a-zA-Z0-9.!#$%&'*+-\/=?\^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,M=/[a-z][\-\.+a-z]*:\/\//i,L=/^(input|select|textarea)$/i;return r=function(e,t){var a=!e.nodeType||!1,i={validClass:"valid",invalidClass:"error",requiredClass:"required",placeholderClass:"placeholder",onSubmit:Function.prototype,onInvalid:Function.prototype};if("object"==typeof t)for(var r in i)"undefined"==typeof t[r]&&(t[r]=i[r]);if(n=t||i,a)for(var s=0,u=e.length;u>s;s++)l(e[s]);else l(e)},l=function(a){var i,r=a.elements,l=r.length,c=!!a.attributes.novalidate;if(h(a,"invalid",u,!0),h(a,"blur",u,!0),h(a,"input",u,!0),h(a,"keyup",u,!0),h(a,"focus",u,!0),h(a,"change",u,!0),h(a,"click",o,!0),h(a,"submit",function(i){return e=!0,t||c||a.checkValidity()?void n.onSubmit.call(a,i):void w(i)},!1),!v())for(a.checkValidity=function(){return d(a)};l--;)i=!!r[l].attributes.required,"fieldset"!==r[l].nodeName.toLowerCase()&&s(r[l])},s=function(e){var t=e,a=y(t),n={type:t.getAttribute("type"),pattern:t.getAttribute("pattern"),placeholder:t.getAttribute("placeholder")},r=/^(email|url)$/i,l=/^(input|keyup)$/i,s=r.test(n.type)?n.type:n.pattern?n.pattern:!1,u=p(t,s),o=m(t,"step"),v=m(t,"min"),b=m(t,"max"),h=!(""===t.validationMessage||void 0===t.validationMessage);t.checkValidity=function(){return d.call(this,t)},t.setCustomValidity=function(e){c.call(t,e)},t.validity={valueMissing:a,patternMismatch:u,rangeUnderflow:v,rangeOverflow:b,stepMismatch:o,customError:h,valid:!(a||u||o||v||b||h)},n.placeholder&&!l.test(i)&&f(t)},u=function(e){var t=C(e)||e,a=/^(input|keyup|focusin|focus|change)$/i,r=/^(submit|image|button|reset)$/i,l=/^(checkbox|radio)$/i,o=!0;!L.test(t.nodeName)||r.test(t.type)||r.test(t.nodeName)||(i=e.type,v()||s(t),t.validity.valid&&(""!==t.value||l.test(t.type))||t.value!==t.getAttribute("placeholder")&&t.validity.valid?(A(t,[n.invalidClass,n.requiredClass]),N(t,n.validClass)):a.test(i)?t.validity.valueMissing&&A(t,[n.requiredClass,n.invalidClass,n.validClass]):t.validity.valueMissing?(A(t,[n.invalidClass,n.validClass]),N(t,n.requiredClass)):t.validity.valid||(A(t,[n.validClass,n.requiredClass]),N(t,n.invalidClass)),"input"===i&&o&&(g(t.form,"keyup",u,!0),o=!1))},d=function(t){var a,i,r,l,s,o=!1;if("form"===t.nodeName.toLowerCase()){a=t.elements;for(var d=0,c=a.length;c>d;d++)i=a[d],r=!!i.attributes.disabled,l=!!i.attributes.required,s=!!i.attributes.pattern,"fieldset"!==i.nodeName.toLowerCase()&&!r&&(l||s&&l)&&(u(i),i.validity.valid||o||(e&&i.focus(),o=!0,n.onInvalid.call(t,i)));return!o}return u(t),t.validity.valid},c=function(e){var t=this;t.validationMessage=e},o=function(e){var a=C(e);a.attributes.formnovalidate&&"submit"===a.type&&(t=!0)},v=function(){return E(k,"validity")&&E(k,"checkValidity")},p=function(e,t){if("email"===t)return!q.test(e.value);if("url"===t)return!M.test(e.value);if(t){var i=e.getAttribute("placeholder"),n=e.value;return a=new RegExp("^(?:"+t+")$"),n===i?!1:""===n?!1:!a.test(e.value)}return!1},f=function(e){var t={placeholder:e.getAttribute("placeholder")},a=/^(focus|focusin|submit)$/i,r=/^(input|textarea)$/i,l=/^password$/i,s=!!("placeholder"in k);s||!r.test(e.nodeName)||l.test(e.type)||(""!==e.value||a.test(i)?e.value===t.placeholder&&a.test(i)&&(e.value="",A(e,n.placeholderClass)):(e.value=t.placeholder,h(e.form,"submit",function(){i="submit",f(e)},!0),N(e,n.placeholderClass)))},m=function(e,t){var a=parseInt(e.getAttribute("min"),10)||0,i=parseInt(e.getAttribute("max"),10)||!1,n=parseInt(e.getAttribute("step"),10)||1,r=parseInt(e.value,10),l=(r-a)%n;return y(e)||isNaN(r)?"number"===e.getAttribute("type")?!0:!1:"step"===t?e.getAttribute("step")?0!==l:!1:"min"===t?e.getAttribute("min")?a>r:!1:"max"===t?e.getAttribute("max")?r>i:!1:void 0},b=function(e){var t=!!e.attributes.required;return t?y(e):!1},y=function(e){var t=e.getAttribute("placeholder"),a=/^(checkbox|radio)$/i,i=!!e.attributes.required;return!(!i||""!==e.value&&e.value!==t&&(!a.test(e.type)||$(e)))},h=function(e,t,a,i){E(window,"addEventListener")?e.addEventListener(t,a,i):E(window,"attachEvent")&&"undefined"!=typeof window.event&&("blur"===t?t="focusout":"focus"===t&&(t="focusin"),e.attachEvent("on"+t,a))},g=function(e,t,a,i){E(window,"removeEventListener")?e.removeEventListener(t,a,i):E(window,"detachEvent")&&"undefined"!=typeof window.event&&e.detachEvent("on"+t,a)},w=function(e){e=e||window.event,e.stopPropagation&&e.preventDefault?(e.stopPropagation(),e.preventDefault()):(e.cancelBubble=!0,e.returnValue=!1)},C=function(e){return e=e||window.event,e.target||e.srcElement},N=function(e,t){var a;e.className?(a=new RegExp("(^|\\s)"+t+"(\\s|$)"),a.test(e.className)||(e.className+=" "+t)):e.className=t},A=function(e,t){var a,i,n="object"==typeof t?t.length:1,r=n;if(e.className)if(e.className===t)e.className="";else for(;n--;)a=new RegExp("(^|\\s)"+(r>1?t[n]:t)+"(\\s|$)"),i=e.className.match(a),i&&3===i.length&&(e.className=e.className.replace(a,i[1]&&i[2]?" ":""))},E=function(e,t){var a=typeof e[t],i=new RegExp("^function|object$","i");return!!(i.test(a)&&e[t]||"unknown"===a)},$=function(e){for(var t=document.getElementsByName(e.name),a=0;a<t.length;a++)if(t[a].checked)return!0;return!1},{setup:r}});
+
+coffee:
+  window.onload = ->
+    H5F.setup document.getElementById('add-startup')
+    $('.fld').change ->
+      if $('input#name').hasClass('valid') && $('textarea#summary').hasClass('valid') && $('input#founders').hasClass('valid') && $('input#address').hasClass('valid') && $('input#employee_count').hasClass('valid') && $('input#website_url').hasClass('valid') && $('input#twitter_url').hasClass('valid') && $('input#logo_url').hasClass('valid') && $('input#market_domain').hasClass('valid')
+        $('input.btn').removeAttr('disabled')
+      else
+        $('input.btn').attr('disabled', 'disabled')
+    return
+  return
+
+form.add-startup id="add-startup" name="add-startup" action="http://nebulae-dashboard.herokuapp.com/add-startup" accept-charset="UTF-8" method="post"
+  fieldset
+    input.fld name="utf8" type="hidden" value="&#x2713;"  
+      .group
+        label Name of your startup
+        input.fld type="text" name="name" id="name" required=""
+      .group
+        label What does your startup do? (this will be displayed as your company summary)
+        textarea.fld type="text" name="summary" id="summary" required=""
+      .group
+        label Names of the founders
+        input.fld type="text" name="founders" id="founders" required=""
+      .group
+        label Address
+        input.fld name="address" id="address" required=""
+      .group
+        label Employee count
+        input.fld name="employee_count" id="employee_count" required=""
+      .group
+        label Website URL
+        input.fld name="website_url" id="website_url" required=""
+      .group
+        label Twitter URL
+        input.fld name="twitter_url" id="twitter_url" required=""
+      .group
+        label Logo URL (png, at least 250px wide)
+        input.fld name="logo_url" id="logo_url" required=""
+      .group
+        label What domain does your startup operate in?
+        input.fld name="market_domain" id="market_domain" required=""
+    input.btn type="submit" name="commit" value="Send" disabled="disabled"
