@@ -8,6 +8,7 @@ Time.zone = "Paris"
 # Page options, layouts, aliases and proxies
 ###
 
+set :site_url, ""
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
@@ -65,7 +66,7 @@ configure :build do
   activate :relative_assets
   activate :minify_css
   activate :minify_javascript
-  set :http_prefix, '/startupsofparis'
+  set :site_url, "/startupsofparis"
 end
 
 activate :deploy do |deploy|
