@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-group :production do
-    gem 'mime-types-data', '~> 3.2016', '>= 3.2016.0221'
-end
+ruby '2.2.3'
 
 gem 'builder', '~> 3.0'
 gem 'jbuilder'
