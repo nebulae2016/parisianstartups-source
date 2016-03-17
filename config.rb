@@ -69,6 +69,7 @@ end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
-  deploy.commit_message = "Automated build & deploy at #{Time.now}"
+  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/nebulae2016/startupsofparis.git"
   deploy.build_before = true
+  deploy.commit_message = "Automated build & deploy at #{Time.now}"
 end
