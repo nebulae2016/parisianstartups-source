@@ -71,4 +71,7 @@ configure :build do
   # activate :minify_javascript
 end
 
-
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.commit_message = "Automated build & deploy at #{Time.now}"
+end
