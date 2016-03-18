@@ -2,12 +2,19 @@ require 'slim'
 require 'sass'
 require 'coffee-script'
 
-Time.zone = "Paris"
+require "lib/startup_template_helpers"
+helpers StartupTemplateHelpers
+
+### General settings
+
+set :site_title, "StartupsOfParis"
+
 
 ###
 # Page options, layouts, aliases and proxies
 ###
 
+Time.zone = "Paris"
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
@@ -48,7 +55,8 @@ activate :directory_indexes
 startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
 startups.each do |s|
   proxy "/#{s["name"].downcase.split(" ").join("-")}/index.html", 
-        "/startup-template.html", 
+        "/startup-template.html",
+        :layout => "startup-layout",
         :locals => {  name:             s["name"],
                       summary:          s["summary"],
                       founders:         s["founders"],

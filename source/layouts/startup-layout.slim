@@ -5,7 +5,8 @@ html
     meta charset="utf-8"
     meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
 
-    title = current_page.title + " - " + data.site.title
+    title = startup_title_helper
+    meta name="description" content=startup_description_helper 
 
     link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"
     = stylesheet_link_tag :site
@@ -13,6 +14,3 @@ html
 
   body class=(page_classes if page_classes)
     == yield
-    = current_page.metadata
-    br
-    brA

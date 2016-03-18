@@ -13,7 +13,6 @@ gem 'coffee-script'
 
 gem 'awesome_print'
 
-# Middleman Gems
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
 gem 'middleman-favicon-maker', '~> 3.5'
