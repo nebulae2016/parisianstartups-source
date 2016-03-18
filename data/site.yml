@@ -1,3 +1,6 @@
 title: StartupsOfParis
-meta_description: Lorem ipsum some nice description here.
+description: Lorem ipsum some nice description here.
+base_url: http://startupsofparis.com
+site_logo: some_relative_path
 
+twitter_handle: nebulae2016

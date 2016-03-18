@@ -2,6 +2,12 @@ doctype html
 html
   head
     = partial 'partials/meta_and_seo'
+    = partial 'partials/og', locals: {  og_image_url: 'some_path.png',
+                                        twitter_publisher_handle: 'some_handle',
+                                        twitter_page_title: 'some_twitter_page',
+                                        twitter_description_200w: startup_description_helper,
+                                        twitter_author_handle: 'some_handle',
+                                        twitter_image_url: startup_image_helper }
 
     title = startup_title_helper
     meta name="description" content=startup_description_helper 
@@ -9,6 +15,7 @@ html
     link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"
     = stylesheet_link_tag :site
     = javascript_include_tag :application
+
 
   body class=(page_classes if page_classes)
     == yield

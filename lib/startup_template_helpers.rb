@@ -22,4 +22,8 @@ module StartupTemplateHelpers
       "Is a startup based in Paris. They employ multiple people and are interested in expanding their business."
     end
   end
+
+  def startup_image_helper
+    current_page.locals[:logo_url] ||= 'http://gph.is/148YzQp'
+  end
 end
