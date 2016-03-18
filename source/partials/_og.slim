@@ -1,0 +1,20 @@
+head prefix="og: http://ogp.me/ns#"
+  / Basic, required metadata - see http://ogp.me/
+  meta content=startup_title_helper property="og:title"
+  meta content="website" property="og:type"
+  meta content=og_website_url property="og:url"
+  meta content=og_image_url property="og:image"
+  / Additional
+  meta content=og_website_description property="og:description"
+  meta content=data.site.title property="og:site_name"
+  meta content=facebook_app_id property="fb:app_id"
+  /! Twitter Card data
+  meta content="summary" name="twitter:card"
+  meta content=twitter_publisher_handle name="twitter:site"
+  meta content=twitter_page_title name="twitter:title"
+  meta content=twitter_description_less_than_200w name="twitter:description"
+  meta content=twitter_author_handle name="twitter:creator"
+  /! Twitter Summary card images must be at least 120x120px
+  meta content=twitter_image_url name="twitter:image"
+
+  / to be filled out: og_website_url, og_image_url, og_website_description, facebook_app_id, twitter_publisher_handle, twitter_page_title, twitter_description_less_than_200w, twitter_author_handle and twitter_image_url
