@@ -1,0 +1,258 @@
+@import 'variables'
+@import 'mixins'
+@import 'normalize'
+
+a
+	text-decoration: none
+
+li
+	list-style-type: none
+
+ul
+	padding: 0
+	margin: 0
+
+body
+	border: 20px solid $peach
+	+background-image('circle.svg')
+	background-color: $peach
+	background-size: 23px 23px
+	font-family: $font-family-base
+
+
+nav.ctg,
+#content
+	background-color: white
+
+.logo, .util
+	position: relative
+
+#header
+	// padding-bottom: $box-pad/2
+	.logo, .util
+		width: 100%
+	
+	@media screen and (min-width: $container-md)
+		$logo-w: 67
+		.logo
+			width: ($logo-w) * 1%
+		.util
+			width: (100 - $logo-w) * 1%
+
+	@media screen and (min-width: 890px)
+		.logo
+			width: 600px
+	
+	// @media screen and (min-width: $container-big)
+	// 	// .logo
+	// 		// width: 600px
+	// 	.util
+	// 		padding-top: $box-pad
+	// 		// width: 50%
+	
+	+clearfix
+	h1
+		padding: 0
+		margin: 0
+		display: block
+
+@media screen and (min-width: $container-big)
+
+.logo
+	float: left
+
+.util
+	float: right
+
+	@media screen and (min-width: $container-big)
+		max-width: 227px
+	
+	@media screen and (max-width: 750px) and (min-width: $container-md)
+		max-width: 146px
+	
+	ul, a
+		display: block
+	
+	li
+		
+		display: block
+		float: left
+		
+		@media screen and (min-width: 750px)
+			display: inline-block
+			float: none
+			// outline: 4px solid red
+		
+		padding: 0px 5px 5px 0
+		background: $dirt
+		margin: 0 15px 15px 0
+		// line-height: 60px
+		a
+			+square(60px)
+
+			text-align: center
+			display: block
+			
+			img
+				+center-block
+			// line-height: 10px
+			padding-top: 15px
+			padding-bottom: 14px
+			color: $blumarin
+			font-weight: bold
+			background: white
+
+		&:nth-child(1) img
+			width: 35px
+		&:nth-child(2)
+			img
+				width: 16px
+			@media screen and (min-width: $container-md) and (max-width: 750px)
+				margin-right: 0
+		&:nth-child(3)
+			img
+				width: 37px
+			@media screen and (min-width: 750px)
+				margin-right: 0
+			a
+				padding-top: 17px
+
+		&.submit
+			margin-right: 1px
+			a
+				// line-height: 20px
+				// padding: 0
+				// display: block
+				// background: blue
+			@media screen and (max-width: 750px)
+				// display: block
+
+			@media screen and (min-width: 750px)
+				width: auto
+				display: block
+				a
+					+size(auto)
+		
+
+	
+
+.wrap
+	max-width: $container-max
+	+center-block
+
+nav.ctg
+	select, ul
+		display: none
+	
+	ul
+		width: 100%
+		border-bottom: 2px solid $peach
+	
+	li
+		text-align: center
+		display: inline-block
+		display: table-cell
+	
+	a
+		color: $blumarin
+		font-weight: 900
+		padding: $box-pad/2 0
+		display: block
+		+transition(200ms)
+		&:hover
+			background-color: $blumarin
+			color: white
+	
+	select
+		&:focus
+			outline: none
+		&:after
+			content: 'test'
+			display: block
+			position: absolute
+		
+		width: 100%
+		overflow: hidden
+		padding: 10px
+		margin: 0
+		border: 2px solid $blumarin
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		box-shadow: none
+		border-radius: 0
+		+background-image('arrow_ico.svg')
+		background-color: transparent
+		background-size: 30px 30px
+		background-position: right 5px
+		background-repeat: no-repeat
+
+
+	@media screen and (min-width: $container-sm)
+		select
+			display: block
+	
+	@media screen and (min-width: $container-big)
+		select
+			display: none
+		ul
+			display: table
+
+
+// Custom select
+
+
+ul.startups
+	+clearfix
+	display: block
+
+	li
+		float: left
+		width: 100%
+		position: relative
+		border-bottom: 2px solid $peach
+		a
+			color: $blumarin
+		
+		> div
+			+stretch
+			text-align: center
+			
+			> div
+				+square(100%)
+				display: table
+				
+				a
+					vertical-align: middle
+					display: table-cell
+
+		&:before
+			content: ""
+			display: block
+			padding-top: 100%
+
+		// left: -2px
+		// position: relative
+		// display: inline-block
+		// width: 100%
+		
+		@media screen and (min-width: $container-md)
+			width: (100 / 2) * 1%
+			left: -2px
+			border-left: 2px solid $peach
+		
+		@media screen and (min-width: $container-big)
+			width: (100 / 3) * 1%
+		@media screen and (min-width: $container-lg)
+			width: (100 / 4) * 1%
+		@media screen and (min-width: $container-max)
+			width: (100 / 5) * 1%
+
+		
+
+			
+
+#content
+	padding-top: 2px solid $peach
+
+
