@@ -1,19 +1,20 @@
 doctype html
 html
-  head
-    = partial 'partials/meta_and_seo'
-    = partial 'partials/og', locals: {  og_image_url: data.site.site_logo,
-                                        twitter_publisher_handle: data.site.twitter_handle,
-                                        twitter_page_title: data.site.title,
-                                        twitter_description_200w: startup_description_helper,
-                                        twitter_author_handle: data.site.twitter_handle,
-                                        twitter_image_url: startup_image_helper }
+	head
+		= partial 'partials/meta_and_seo'
+		= partial 'partials/og', 
+			locals: { og_image_url: data.site.site_logo,
+			twitter_publisher_handle: data.site.twitter_handle,
+			twitter_page_title: data.site.title,
+			twitter_description_200w: startup_description_helper,
+			twitter_author_handle: data.site.twitter_handle,
+			twitter_image_url: startup_image_helper }
 
-    title = data.site.title
+		title = data.site.title
 
-    link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"
-    = stylesheet_link_tag :application
-    = javascript_include_tag :application
+		link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"
+		= stylesheet_link_tag :application
+		= javascript_include_tag :application
 
-  body class=(page_classes if page_classes)
-    == yield
+	body class=(page_classes if page_classes)
+		== yield

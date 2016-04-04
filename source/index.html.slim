@@ -7,12 +7,24 @@
 		
 		.util
 			ul
-				li =link_to 'twitter', 'click'
-				li =link_to 'facebook', 'click'
-				li =link_to 'newsletter', 'click'
-				li = link_to 'Add yours', "submit"
+				li =link_to image_tag('twitter_ico.svg', :alt => 'twitter'), 'http://twitter.com/parisianstartups'
+				li =link_to image_tag('fb_ico.svg', :alt => 'facebook'), 'http://facebook.com/parisianstartups'
+				li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				li.submit =link_to 'Add yours', 'submit'
 	
 	nav.ctg
+		
+		select
+			option =link_to 'FOOD', 'categ'
+			option =link_to 'FINANCE', 'categ'
+			option =link_to 'TECH', 'categ'
+			option =link_to 'FASHION', 'categ'
+			option =link_to 'SPORT', 'categ'
+			option =link_to 'DESIGN', 'categ'
+			option =link_to 'MEDIA', 'categ'
+			option =link_to 'JOBS', 'categ'
+			option =link_to 'SOCIAL', 'categ'
+		
 		ul
 			li =link_to 'FOOD', 'categ'
 			li =link_to 'FINANCE', 'categ'
