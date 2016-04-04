@@ -10,7 +10,7 @@ Time.zone = "Paris"
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
-
+# set :partials_dir, 'partials' // this is not working regardless of the layout file extenssion .html.slim)
 # Per-page layout changes:
 #
 # With no layout

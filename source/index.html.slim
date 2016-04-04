@@ -1,9 +1,34 @@
-= link_to 'Submit a new startup', "submit"
-hr
-- startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
-- startups.each do |s|
-  h1 = s["name"]
-  p = s["summary"]
-  = link_to 'See more', "#{s["name"].downcase.split(" ").join("-")}"
-  br
+.wrap
+	
+	header#header
+		
+		.logo
+			h1 =image_tag 'logo.svg'
+		
+		.util
+			ul
+				li =link_to 'twitter', 'click'
+				li =link_to 'facebook', 'click'
+				li =link_to 'newsletter', 'click'
+				li = link_to 'Add yours', "submit"
+	
+	nav.ctg
+		ul
+			li =link_to 'FOOD', 'categ'
+			li =link_to 'FINANCE', 'categ'
+			li =link_to 'TECH', 'categ'
+			li =link_to 'FASHION', 'categ'
+			li =link_to 'SPORT', 'categ'
+			li =link_to 'DESIGN', 'categ'
+			li =link_to 'MEDIA', 'categ'
+			li =link_to 'JOBS', 'categ'
+			li =link_to 'SOCIAL', 'categ'
 
+	section#content
+		ul.startups
+			- startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
+			- startups.each do |s|
+			  / h1 = s["name"]
+			  / p = s["summary"]
+			  li
+			  	= link_to "#{s["name"]}", "#{s["name"].downcase.split(" ").join("-")}"

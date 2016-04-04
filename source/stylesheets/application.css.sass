@@ -1,0 +1,99 @@
+@import 'variables'
+@import 'mixins'
+@import 'normalize'
+
+* 
+	outline: 1px solid red
+
+a
+	text-decoration: none
+
+li
+	list-style-type: none
+
+ul
+	padding: 0
+	margin: 0
+
+body
+	border: 20px solid $peach
+	+background-image('circle.svg')
+	background-color: $peach
+	background-size: 23px 23px
+	font-family: $font-family-base
+
+
+
+nav.ctg,
+#content
+	background-color: $dirt
+
+#header
+	+clearfix
+	
+	h1
+		width: 600px
+		display: block
+
+@media screen and (min-width: $container-big)
+	.logo, .util
+		float: left
+
+.util
+	float: left
+
+.wrap
+	max-width: $container-max
+	+center-block
+
+.ctg
+	ul
+		display: table
+		width: 100%
+		border-bottom: 2px solid $peach
+	
+	li
+		text-align: center
+		display: inline-block
+		display: table-cell
+	
+	a
+		color: $blumarin
+		font-weight: 900
+		padding: $box-pad/2 0
+		display: block
+		+transition(200ms)
+		&:hover
+			background-color: white
+
+ul.startups
+	display: block
+	li
+		left: -2px
+		position: relative
+		display: inline-block
+		width: (100 / 5) * 1%
+		border-left: 2px solid $peach
+		border-bottom: 2px solid $peach
+		padding-top: 15%
+
+	a
+		color: $blumarin
+		text-align: center
+		padding-top: 32%
+		display: block
+		position: absolute
+		+stretch
+
+
+
+
+
+#content
+	padding-top: 2px solid $peach
+
+
+
+
+
+
