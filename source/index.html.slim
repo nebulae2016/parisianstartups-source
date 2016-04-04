@@ -10,7 +10,8 @@
 				li =link_to image_tag('twitter_ico.svg', :alt => 'twitter'), 'http://twitter.com/parisianstartups'
 				li =link_to image_tag('fb_ico.svg', :alt => 'facebook'), 'http://facebook.com/parisianstartups'
 				li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
-				li.submit =link_to 'Add yours', 'submit'
+				/ li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				li.submit =link_to 'Add Yours', 'submit'
 	
 	nav.ctg
 		
@@ -42,5 +43,5 @@
 			- startups.each do |s|
 			  / h1 = s["name"]
 			  / p = s["summary"]
-			  li
-			  	= link_to "#{s["name"]}", "#{s["name"].downcase.split(" ").join("-")}"
+			  li: div
+			  	div = link_to "#{s["name"]}", "#{s["name"].downcase.split(" ").join("-")}"
