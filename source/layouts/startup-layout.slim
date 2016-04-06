@@ -12,11 +12,11 @@ html
 
 		title = startup_title_helper
 		meta name="description" content=startup_description_helper 
-
 		link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"
 		= stylesheet_link_tag :application
 		= javascript_include_tag :application
 
 
   body class=(page_classes if page_classes)
-	== yield
+		
+		== yield
