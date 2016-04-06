@@ -44,4 +44,6 @@
 			  / h1 = s["name"]
 			  / p = s["summary"]
 			  li: div
-			  	div = link_to "#{s["name"]}", "#{s["name"].downcase.split(" ").join("-")}"
+			  	div 
+			  		= link_to "#{s["name"]}", "#{s["name"].downcase.split(" ").join("-")}"
+			  		/span = image_tag s["logo_url"]
