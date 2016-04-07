@@ -12,7 +12,12 @@ ul
 	padding: 0
 	margin: 0
 
+body,
+html
+	height: 100%
+
 body
+	color: $blumarin
 	border: 20px solid $peach
 	+background-image('circle.svg')
 	background-color: $peach
@@ -52,7 +57,6 @@ nav.ctg,
 	
 	+clearfix
 	h1
-		padding: 0
 		margin: 0
 		display: block
 
@@ -198,7 +202,6 @@ nav.ctg
 		ul
 			display: table
 
-
 // Custom select
 
 
@@ -246,13 +249,165 @@ ul.startups
 		@media screen and (min-width: $container-lg)
 			width: (100 / 4) * 1%
 		@media screen and (min-width: $container-max)
-			width: (100 / 5) * 1%
+			width: (100 / 5) * 1%			
 
-		
-
-			
-
+	img
+		max-width: 100px
 #content
 	padding-top: 2px solid $peach
 
+
+
+
+// *
+// 	outline:  1px dotted red
+
+.last
+	// display: block
+	+clearfix
+	// background: blue
+
+
+// Contact ------------------------------------------
+
+#addstartup
+	padding-top: $box-pad
+	h1
+		text-align: center
+	
+	+clearfix
+
+	@media only screen and (min-width: $container-lg)
+		max-width: auto
+		// margin: 0 -1 * $box-pad / 2
+
+		> div
+			// outline: 2px solid blue
+			// padding: 0 $box-pad / 2
+			
+			display: inline-block
+			vertical-align: top
+			width: 50%
+			position: relative
+	
+	.info
+		padding: 0 $box-pad / 2 $box-pad $box-pad / 2
+		max-width: $container-big
+	
+	form
+		padding: 0 $box-pad / 2
+		@media only screen and (min-width: $container-lg)
+			padding: 0
+	
+
+
+// $fld-h: 50px
+
+.group
+	&.textarea
+		height: auto
+
+	margin-bottom: 26px
+	padding: 0
+	input, select
+		box-sizing: border-box
+
+.fld
+	&.error, &.required
+		border-bottom: 2px solid red
+	&.valid	
+		border-bottom: 2px solid green
+
+	border: 2px solid white
+	border-bottom: 2px solid $blumarin
+	line-height: 1.4em
+	display: block
+	width: 100%
+	border-radius: 0
+	-webkit-appearance: none
+	color: $blumarin
+	outline: none
+	padding-right: $box-pad
+
+	&:active,
+	&:focus
+		// box-shadow: 0px 2px 0px black
+
+select
+	background: white
+
+input:-webkit-autofill
+	-webkit-box-shadow: 0 0 0px 1000px white inset
+
+label
+	&:after
+		content: ' :'
+
+textarea.expanding.fld
+	border: 2px solid $blumarin
+	height: auto
+	min-height: 50px
+	// padding: 13px 0
+	margin: 0
+	z-index: 3
+	position: relative
+	label
+		position: relative
+		z-index: 1
+	&:focus
+		background-color: white
+	&.valid, &:focus
+		// background-color: white
+		height: auto
+		// z-index: 4
+
+	// max-height: $fld-h
+
+input.btn
+	color: white
+	background: $blumarin
+	display: inline-block
+	width: auto
+	padding: $box-pad / 4 $box-pad / 2
+	&[disabled="disabled"]
+		background: #ccc
+		border: #ccc
+
+.left,
+.right
+	// @media only screen and (max-width: $container-big)
+	// 	padding-left: 0
+	padding-top: $box-pad
+	padding-bottom: $box-pad
+	// padding: 0
+	border: 0
+	margin: 0
+	width: 50%
+	float: left
+	display: block
+
+.left
+	padding-right: $box-pad/2
+	padding-left: $box-pad
+
+.right
+	padding-left: $box-pad/2
+	padding-right: $box-pad
+
+.button
+	padding: $box-pad 0
+
+
+$white: white
+$highlightColorActive: #000
+$blue: rgb(69, 113, 236)
+
+// +square($dim)
+
+// The important CSS
+// ------------------------
+
+.control-inline label
+	display: inline
+	position: relative
 
