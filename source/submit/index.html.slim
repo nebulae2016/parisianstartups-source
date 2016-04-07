@@ -40,6 +40,25 @@ form.add-startup id="add-startup" name="add-startup" action="http://nebulae-dash
         label Logo URL (png, at least 250px wide)
         input.fld name="logo_url" id="logo_url" required=""
       .group
-        label What domain does your startup operate in? (seperate the tags with a comma)
-        input.fld name="market_domain" id="market_domain" required=""
+        label What domain does your startup operate in?
+        select.fld name="market_domain" id="market_domain" required=""
+          option value="food" Food
+          option value="vr/ar" Virtual Reality / Augmented Reality
+          option value="transport" Transport
+          option value="finance" Finance
+          option value="tech" Tech
+          option value="music" Music
+          option value="ai" Artificial Intelligence
+          option value="social" Social
+          option value="communication" Communication
+          option value="energy" Energy
+          option value="healthcare" Healthcare
+          option value="nonprofit" Non Profit
+          option value="security" Security
+          option value="education" Education
+          option value="urbanism" Urbanism
+          option value="arts/crafts" Arts & Crafts
+          option value="enterprise solutions" Enterprise Solutions
+          option value="other" Other
+
     input.btn type="submit" name="commit" value="Send" disabled="disabled"
