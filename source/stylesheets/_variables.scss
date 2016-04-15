@@ -29,29 +29,42 @@ $box-pad: 30px;
 // Navbar Variables
 $nav-height: 60px;
 
+$navtop: 350px;
+$navsmall: 60px;
+
+
 // Colors 
 $peach: #f9efed;
 $dirt: #e1dad8;
 $blumarin: #3a3b73;
 
 
-// debug kit
-// * {
-// 	outline: 1px dotted fade-out(black, 0.5);
 
-// 	@media screen and (min-width: $container-sm) {
-// 		outline: 1px dotted fade-out(blue, 0.5);
-// 	}
-// 	@media screen and (min-width: $container-md) {
-// 		outline: 1px dotted fade-out(green, 0.5);
-// 	}
-// 	@media screen and (min-width: $container-big) {
-// 		outline: 1px dotted fade-out(olive, 0.5);
-// 	}
-// 	@media screen and (min-width: $container-lg) {
-// 		outline: 1px dotted fade-out(orange, 0.5);
-// 	}
-// 	@media screen and (min-width: $container-max) {
-// 		outline: 1px dotted fade-out(red, 0.5);
-// 	}
-// }
+
+
+// debug kit
+* {
+	outline: 1px dotted fade-out(black, 0.5);
+
+	@media screen and (min-width: $container-max) {
+		outline: 1px dotted fade-out(blue, 0.5);
+	}
+	@media screen and (min-width: $container-xl) {
+		outline: 1px dotted fade-out(green, 0.5);
+	}
+	@media screen and (min-width: $container-lg) {
+		outline: 1px dotted fade-out(olive, 0.5);
+	}
+	@media screen and (min-width: $container-big) {
+		outline: 1px dotted fade-out(orange, 0.5);
+	}
+	@media screen and (min-width: $container-md) {
+		outline: 1px dotted fade-out(red, 0.5);
+	}
+	@media screen and (min-width: $container-sm) {
+		outline: 1px dotted fade-out(red, 0.5);
+	}
+	@media screen and (min-width: $container-xs) {
+		outline: 1px dotted fade-out(red, 0.5);
+	}
+}

@@ -1,6 +1,8 @@
+// @import 'bootstrap'
+@import 'normalize'
 @import 'variables'
 @import 'mixins'
-@import 'normalize'
+@import 'header'
 
 a
 	text-decoration: none
@@ -18,9 +20,9 @@ html
 
 body
 	color: $blumarin
-	border: 20px solid $peach
-	+background-image('circle.svg')
-	background-color: $peach
+	// border: 20px solid $peach
+	// +background-image('circle.svg')
+	// background-color: $peach
 	background-size: 23px 23px
 	font-family: $font-family-base
 
@@ -32,7 +34,9 @@ nav.ctg,
 .logo, .util
 	position: relative
 
-#header
+
+
+header.inside
 	// padding-bottom: $box-pad/2
 	.logo, .util
 		width: 100%
@@ -59,6 +63,14 @@ nav.ctg,
 	h1
 		margin: 0
 		display: block
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: $container-big)
 
@@ -253,13 +265,16 @@ ul.startups
 
 	img
 		max-width: 100px
+
 #content
-	padding-top: 2px solid $peach
+	&.margintop
+		margin-top: $navtop
 
 
 
 
 // *
+
 // 	outline:  1px dotted red
 
 .last

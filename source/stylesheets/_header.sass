@@ -1,0 +1,73 @@
+header#header
+	
+	// default
+	background: blue
+	height: $navtop
+
+	@media only screen and (min-width: $container-lg)
+		height: $navtop
+		background: pink
+
+		&.notOnTop
+			+place(fixed, 0, 0, auto, 0)
+			height: $navsmall
+			top: - $navsmall
+			// +transition(none)
+			// &.opacity
+			+transition(top .2s linear)
+		
+		// &.notOnTop
+			// top: -4 * $navmenu-height
+			
+		&.scrollup
+			top: 0
+			// z-index: 9
+
+
+
+
+.toggle-nav
+	@media only screen and (min-width: 800px)
+		display: none
+	&.active
+		+rotate(45deg)
+		span
+			&:first-child
+				display: none
+			&:last-child
+				+rotate(90deg)
+				margin-top: -5px
+			
+			margin-top: 5px
+			+transition(all, 0.4s)
+			background: white
+
+	+square(40px)
+	padding: 14px 0 0 10px
+	background: black
+	border-radius: 100%
+	position: fixed
+	right: 30px
+	top: 25px
+	z-index: 9
+	cursor: pointer
+	span
+		display: block
+		background: white
+		width: 20px
+		height: 2px
+		margin-bottom: 3px
+
+/// When the nav-menu is open in mobile mode.
+@media only screen and (max-width: $container-lg)
+	body.overflow,
+	html.overflow
+		overflow: hidden !important
+		height: 100%
+
+html:not(.no-touchevents).fixed header#header
+	position: relative !important
+
+html:not(.no-touchevents).fixed header#header nav.visible
+	+stretch
+	min-height: 800px

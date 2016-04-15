@@ -43,6 +43,10 @@ helpers StartupTemplateHelpers
 ###
 
 activate :directory_indexes
+activate :sprockets do |c|
+  # with next iteration put in sites directory
+  c.imported_asset_path = '/lib/'
+end
 
 startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
 startups.each do |s|

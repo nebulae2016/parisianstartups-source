@@ -19,15 +19,33 @@ html
 
 		.wrap
 			header#header
-				.logo
-					h1 =image_tag 'logo.svg'
-				.util
-					ul
-						li =link_to image_tag('twitter_ico.svg', :alt => 'twitter'), 'http://twitter.com/parisianstartups'
-						li =link_to image_tag('fb_ico.svg', :alt => 'facebook'), 'http://facebook.com/parisianstartups'
-						li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
-						/ li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
-						li.submit =link_to 'Add Yours', 'submit'
+				/ nav	
+					/ .logo: h1 =image_tag 'logo.svg'
+				
+				/ .util
+				/ 	ul
+				/ 		li =link_to image_tag('twitter_ico.svg', :alt => 'twitter'), 'http://twitter.com/parisianstartups'
+				/ 		li =link_to image_tag('fb_ico.svg', :alt => 'facebook'), 'http://facebook.com/parisianstartups'
+				/ 		li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				/ 		/ li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				/ 		li.submit =link_to 'Add Yours', 'submit'
 			
 			section#content
 				== yield
+
+
+// ------
+/ header#header
+/ 	div.wrap
+/ 		nav
+/ 			div
+/ 				=link_to 'nebulae1016', '/', class: 'logo'
+/ 				ul.main-nav
+/ 					li
+/ 						- if current_page.url != ('/#work') && current_page.url != ('/about/') && current_page.url != ('/') && current_page.url != ('/contact/')&& current_page.url != ('/services/')
+/ 							= link_to t(:work), '/#work', class: 'active'
+/ 						- else
+/ 							= link_to t(:work), '/#work', class: is_page_active('/#work')
+/ 					li = link_to t(:services), '/services/', class: is_page_active('/services/')
+/ 					li = link_to t(:team), '/about/', class: is_page_active('/about/')
+/ 					li = link_to t(:contactlink), '/contact/', class: is_page_active('/contact/')
