@@ -21,6 +21,9 @@ body
 	color: $blumarin
 	background-size: 23px 23px
 	font-family: $font-family-base
+	@media screen and (max-width: $container-max)
+		padding-left: $box-pad/4
+		padding-right: $box-pad/4
 
 nav#navbar,
 header#header,
@@ -84,11 +87,14 @@ html:not(.no-touchevents).fixed header#header nav.visible
 
 // -------------------------------------------------------- //
 nav#navbar
-	background: blue
+	position: relative
+	background: white
 	height: $nav-height
+	z-index: 9999
+
 
 	@media only screen and (min-width: $container-lg)
-		background: white
+		
 
 		&.notOnTop
 			+place(fixed, 0, 0, auto, 0)
@@ -133,19 +139,13 @@ nav#navbar
 		margin-bottom: 3px
 
 
-
-
-nav#navbar
-	position: relative
-
-
 a.logo
+	padding-top: 6px
 	display: block
 	float: left
-	margin-right: $box-pad
 	img
 		display: block
-		width: 160px
+		width: 153px
 
 // -------------------------------------------------------- //
 body.index
@@ -155,7 +155,7 @@ body.index
 header#header
 	padding-bottom: $box-pad/2
 	.banner
-		background: fade-out(olive, 0.5)
+		// background: fade-out(olive, 0.5)
 		img
 			visibility: hidden
 		
@@ -168,54 +168,69 @@ header#header
 
 .util
 	float: right
-	
-	display: none
-	
-	@media screen and (min-width: $container-big)
-		
-		// display: block
-	
-	ul, li, a
+	padding-top: 6px
+	@media screen and (max-width: $container-md)
+		li
+			&:nth-child(1)
+				display: none
+			&:nth-child(2)
+				display: none
+			&:nth-child(3)
+				display: none
 	
 	li
 		float: left
-		padding: 0px 5px 5px 0
-		margin: 0 15px 15px 0
-		background: $dirt
+		margin-right: 16px
+		box-shadow: 2px 2px 0px $dirt
+
 		a
-			+square(60px)
-			text-align: center
+			+square(48px)
+			position: relative
 			display: block
+			padding: 13px 0
+			color: white
+			font-weight: bold
+			background: $blumarin
+			text-align: center
+			font-size: 0.9em
+			line-height: 1.2em
+			top: 0 
+			left: 0
+			+transition(100ms, linear) // requires top left properties
+			&:hover
+				top: 2px
+				left: 2px
+				box-shadow: 0px 0px 0px $dirt
 			img
 				+center-block
-				height: 30px
-			padding: 15px 0
-			color: $blumarin
-			font-weight: bold
-			background: white
-
+				height: 23px
+		&:last-child
+			margin-right: 0
+			a
+				padding-top: 8px
 
 
 
 
 .ctg
-	// +place(absolute, 0, auto, auto, 0)
-	width: 200px
+	padding-top: 6px
+	padding-left: $box-pad / 2
+	width: 150px
 	float: left
-	select, ul
-		display: block
 	
 	select
+		height: 48px
 		&:focus
 			outline: none
 		&:after
 			content: 'test'
 			display: block
 			position: absolute
-		
+		color: $blumarin
+		font-weight: bold
 		width: 100%
 		overflow: hidden
-		padding: 10px
+		padding: 14px 15px
 		margin: 0
 		border: 2px solid $blumarin
 		-webkit-appearance: none
@@ -226,7 +241,7 @@ header#header
 		+background-image('arrow_ico.svg')
 		background-color: transparent
 		background-size: 30px 30px
-		background-position: right 5px
+		background-position: right 7px
 		background-repeat: no-repeat
 
 // Custom select
@@ -234,8 +249,9 @@ header#header
 ul.startups
 	+clearfix
 	display: block
-
+	border-right: 1px solid $blumarin
 	li
+		box-shadow: inset 1px 1px 0px $blumarin
 		float: left
 		width: 100%
 		position: relative
@@ -273,7 +289,7 @@ ul.startups
 	a
 		display: block
 		color: white
-		font-size: 1.5em
+		// font-size: 1.5em
 
 		strong
 			+stretch
@@ -472,6 +488,7 @@ $blue: rgb(69, 113, 236)
 
 .st-info
 	+clearfix
+	padding-top: $box-pad
 	p
 		@media screen and (min-width: $container-big)
 		padding-right: $box-pad * 2

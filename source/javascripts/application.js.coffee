@@ -13,9 +13,9 @@ $(document).ready ->
   return
 $document = $(document)
 
-$(window).resize ->
-  test = $(window).width()
-  $('#indicator').text(test)
+# $(window).resize ->
+#   test = $(window).width()
+#   $('#indicator').text(test)
 
 $document.scroll ->
   if $document.scrollTop() >= 60
