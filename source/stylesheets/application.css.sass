@@ -29,6 +29,12 @@ section#content
 	margin-left: auto
 	margin-right: auto
 
+.fl
+	float: left
+
+.fr
+	float: right
+
 // Some mixins -------------------------------------------//
 
 =desaturate
@@ -57,15 +63,32 @@ section#content
 
 // -------------------------------------------------------- //
 
+// SCAFOLDING -------------------
+
 +makesomeresponsivecolumns(12)
 
+/// When the nav-menu is open in mobile mode.
+@media only screen and (max-width: $container-lg)
+	body.overflow,
+	html.overflow
+		overflow: hidden !important
+		height: 100%
+
+html:not(.no-touchevents).fixed header#header
+	position: relative !important
+
+html:not(.no-touchevents).fixed header#header nav.visible
+	+stretch
+	min-height: 800px
+
+
+// -------------------------------------------------------- //
 nav#navbar
 	background: blue
 	height: $nav-height
 
 	@media only screen and (min-width: $container-lg)
-		// height: $navtop
-		background: pink
+		background: white
 
 		&.notOnTop
 			+place(fixed, 0, 0, auto, 0)
@@ -109,19 +132,7 @@ nav#navbar
 		height: 2px
 		margin-bottom: 3px
 
-/// When the nav-menu is open in mobile mode.
-@media only screen and (max-width: $container-lg)
-	body.overflow,
-	html.overflow
-		overflow: hidden !important
-		height: 100%
 
-html:not(.no-touchevents).fixed header#header
-	position: relative !important
-
-html:not(.no-touchevents).fixed header#header nav.visible
-	+stretch
-	min-height: 800px
 
 
 nav#navbar
@@ -474,12 +485,6 @@ ul.st-det
 .st-logo
 	img
 		max-width: 100px
-
-.fl
-	float: left
-
-.fr
-	float: right
 
 
 

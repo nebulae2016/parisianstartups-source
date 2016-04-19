@@ -26,4 +26,29 @@ module StartupTemplateHelpers
   def startup_image_helper
     current_page.locals[:logo_url] ||= 'http://gph.is/148YzQp'
   end
+
+  # def strip_link(url)
+  #   def strip_www(url)
+  #     if url.include?('www.')
+  #       url.gsub('www.', '')
+  #     end
+  #   end
+
+  #   def strip_http_https(url)
+  #     if url.include?('http://')
+  #       url.gsub('http://','')
+  #     elsif url.include?('https://')
+  #       url.gsub('https://', '')
+  #     elsif url.include?('https://twitter.com/')
+  #       url.gsub('https://twitter.com', '')
+  #     else
+  #       url
+  #     end
+  #   end
+
+  #   url1 = strip_www(url)
+  #   url2 = strip_http_https(url1)
+  #   return url2
+  # end
+    
 end
