@@ -15,25 +15,25 @@ $document = $(document)
 
 $(window).resize ->
   test = $(window).width()
-  $('#header').text(test)
+  $('#indicator').text(test)
 
 $document.scroll ->
-  if $document.scrollTop() >= 350
-    $('header#header').addClass 'notOnTop'
-    $('#content').addClass 'margintop'
+  if $document.scrollTop() >= 60
+    $('nav#navbar').addClass 'notOnTop'
+    $('body.index').addClass 'margintop'
   else
-    $('header#header').removeClass 'notOnTop'
-    $('#content').removeClass 'margintop'
+    $('nav#navbar').removeClass 'notOnTop'
+    $('body.index').removeClass 'margintop'
   return
 lastScrollTop = 0
 $(window).scroll (event) ->
   st = $(this).scrollTop()
   if st > lastScrollTop
-    $('header#header').removeClass 'scrollup'
+    $('nav#navbar').removeClass 'scrollup'
   else
-    $('header#header').addClass 'scrollup'
-    $('header#header').removeClass 'scrolldown'
+    $('nav#navbar').addClass 'scrollup'
+    $('nav#navbar').removeClass 'scrolldown'
   if st < 1
-    $('header#header').removeClass 'scrollup'
+    $('nav#navbar').removeClass 'scrollup'
   lastScrollTop = st
   return

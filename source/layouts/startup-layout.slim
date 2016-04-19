@@ -17,6 +17,11 @@ html
 		= javascript_include_tag :application
 
 
-  body class=(page_classes if page_classes)
-		
-		== yield
+  body
+
+		= partial 'partials/navbar'
+
+		section#content
+			== yield
+
+		#indicator

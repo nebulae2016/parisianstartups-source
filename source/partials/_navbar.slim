@@ -1,0 +1,23 @@
+nav#navbar
+	.wrap
+		= link_to image_tag('logo.svg'), '/', :class => 'logo'
+		.ctg
+			select
+				option =link_to 'FOOD', 'categ'
+				option =link_to 'FINANCE', 'categ'
+				option =link_to 'TECH', 'categ'
+				option =link_to 'FASHION', 'categ'
+				option =link_to 'SPORT', 'categ'
+				option =link_to 'DESIGN', 'categ'
+				option =link_to 'MEDIA', 'categ'
+				option =link_to 'JOBS', 'categ'
+				option =link_to 'SOCIAL', 'categ'
+		
+		.util
+			ul
+				li =link_to image_tag('twitter_ico.svg', :alt => 'twitter'), 'http://twitter.com/parisianstartups'
+				li =link_to image_tag('fb_ico.svg', :alt => 'facebook'), 'http://facebook.com/parisianstartups'
+				li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				/ li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				li.submit =link_to 'Add Yours', 'submit'
+				nav.ctg

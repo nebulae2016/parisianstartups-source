@@ -1,13 +1,19 @@
-h1 = name
-- market_domain.split(",").each do |tag|
-  span class="domain-tag" = tag
-p = summary
-h4 = founders
-h4 = address
-h4 = employee_count.to_s + " employees"
-br
-= link_to 'Link to website', website_url
-br
-= link_to 'Link to Twitter', twitter_url
-br
-= image_tag logo_url
+header.st-name
+	- market_domain.split(",").each do |tag|
+	  span class="domain-tag" = tag
+
+	h1 = name
+	p.details
+		span founded by #{founders} currently has #{employee_count.to_s} employees.
+.st-info
+	.col.sm-w8.w6
+		p = summary
+		
+
+	.col.sm-w4.w6
+		ul.st-det
+			li.st-logo= image_tag logo_url
+			li.st-url= link_to website_url.gsub('http://', ''), website_url
+			li.st-twitter= link_to twitter_url.gsub('https://', ''), twitter_url
+			li.st-address= address
+

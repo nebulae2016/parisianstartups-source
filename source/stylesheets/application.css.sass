@@ -2,7 +2,6 @@
 @import 'normalize'
 @import 'variables'
 @import 'mixins'
-@import 'header'
 
 a
 	text-decoration: none
@@ -20,164 +19,180 @@ html
 
 body
 	color: $blumarin
-	// border: 20px solid $peach
-	// +background-image('circle.svg')
-	// background-color: $peach
 	background-size: 23px 23px
 	font-family: $font-family-base
 
+nav#navbar,
+header#header,
+section#content
+	max-width: $container-max
+	margin-left: auto
+	margin-right: auto
 
-nav.ctg,
-#content
-	background-color: white
+// Some mixins -------------------------------------------//
 
-.logo, .util
+=desaturate
+	filter: gray //IE6-9
+	filter: grayscale(1)  //Firefox 35+
+	-webkit-filter: grayscale(1) // Google Chrome, Safari 6+ & Opera 15+
+=saturate
+	filter: none
+	-webkit-filter: grayscale(0)
+
+=makesomeresponsivecolumns($n:24)
+	$cols: $n
+	.col
+		width: 100%
+		+transition(200ms)
+		@media screen and (min-width: $container-md)
+			float: left
+		@media screen and (min-width: $container-md)
+			@for $i from 1 through $cols - 1
+				&.sm-w#{$i}
+					width: ($i * 100/$cols) * 1%
+		@media screen and (min-width: $container-big)
+			@for $i from 1 through $cols - 1
+				&.w#{$i}
+					width: ($i * 100/$cols) * 1%
+
+// -------------------------------------------------------- //
+
++makesomeresponsivecolumns(12)
+
+nav#navbar
+	background: blue
+	height: $nav-height
+
+	@media only screen and (min-width: $container-lg)
+		// height: $navtop
+		background: pink
+
+		&.notOnTop
+			+place(fixed, 0, 0, auto, 0)
+			height: $nav-height
+			top: - $nav-height
+			+transition(top .2s linear)
+			
+		&.scrollup
+			top: 0
+
+
+.toggle-nav
+	@media only screen and (min-width: 800px)
+		display: none
+	&.active
+		+rotate(45deg)
+		span
+			&:first-child
+				display: none
+			&:last-child
+				+rotate(90deg)
+				margin-top: -5px
+			
+			margin-top: 5px
+			+transition(all, 0.4s)
+			background: white
+
+	+square(40px)
+	padding: 14px 0 0 10px
+	background: black
+	border-radius: 100%
+	position: fixed
+	right: 30px
+	top: 25px
+	z-index: 9
+	cursor: pointer
+	span
+		display: block
+		background: white
+		width: 20px
+		height: 2px
+		margin-bottom: 3px
+
+/// When the nav-menu is open in mobile mode.
+@media only screen and (max-width: $container-lg)
+	body.overflow,
+	html.overflow
+		overflow: hidden !important
+		height: 100%
+
+html:not(.no-touchevents).fixed header#header
+	position: relative !important
+
+html:not(.no-touchevents).fixed header#header nav.visible
+	+stretch
+	min-height: 800px
+
+
+nav#navbar
 	position: relative
 
 
+a.logo
+	display: block
+	float: left
+	margin-right: $box-pad
+	img
+		display: block
+		width: 160px
 
-header.inside
-	// padding-bottom: $box-pad/2
-	.logo, .util
+// -------------------------------------------------------- //
+body.index
+	&.margintop
+		padding-top: $nav-height
+
+header#header
+	padding-bottom: $box-pad/2
+	.banner
+		background: fade-out(olive, 0.5)
+		img
+			visibility: hidden
+		
 		width: 100%
-	
-	@media screen and (min-width: $container-md)
-		$logo-w: 67
-		.logo
-			width: ($logo-w) * 1%
-		.util
-			width: (100 - $logo-w) * 1%
-
-	@media screen and (min-width: 890px)
-		.logo
-			width: 600px
-	
-	// @media screen and (min-width: $container-big)
-	// 	// .logo
-	// 		// width: 600px
-	// 	.util
-	// 		padding-top: $box-pad
-	// 		// width: 50%
-	
+		
 	+clearfix
 	h1
 		margin: 0
 		display: block
 
-
-
-
-
-
-
-
-
-@media screen and (min-width: $container-big)
-
-.logo
-	float: left
-
 .util
 	float: right
-
+	
+	display: none
+	
 	@media screen and (min-width: $container-big)
-		max-width: 227px
+		
+		// display: block
 	
-	@media screen and (max-width: 750px) and (min-width: $container-md)
-		max-width: 146px
-	
-	ul, a
-		display: block
+	ul, li, a
 	
 	li
-		
-		display: block
 		float: left
-		
-		@media screen and (min-width: 750px)
-			display: inline-block
-			float: none
-			// outline: 4px solid red
-		
 		padding: 0px 5px 5px 0
-		background: $dirt
 		margin: 0 15px 15px 0
-		// line-height: 60px
+		background: $dirt
 		a
 			+square(60px)
-
 			text-align: center
 			display: block
-			
 			img
 				+center-block
-			// line-height: 10px
-			padding-top: 15px
-			padding-bottom: 14px
+				height: 30px
+			padding: 15px 0
 			color: $blumarin
 			font-weight: bold
 			background: white
 
-		&:nth-child(1) img
-			width: 35px
-		&:nth-child(2)
-			img
-				width: 16px
-			@media screen and (min-width: $container-md) and (max-width: 750px)
-				margin-right: 0
-		&:nth-child(3)
-			img
-				width: 37px
-			@media screen and (min-width: 750px)
-				margin-right: 0
-			a
-				padding-top: 17px
 
-		&.submit
-			margin-right: 1px
-			a
-				// line-height: 20px
-				// padding: 0
-				// display: block
-				// background: blue
-			@media screen and (max-width: 750px)
-				// display: block
 
-			@media screen and (min-width: 750px)
-				width: auto
-				display: block
-				a
-					+size(auto)
-		
 
-	
 
-.wrap
-	max-width: $container-max
-	+center-block
-
-nav.ctg
+.ctg
+	// +place(absolute, 0, auto, auto, 0)
+	width: 200px
+	float: left
 	select, ul
-		display: none
-	
-	ul
-		width: 100%
-		border-bottom: 2px solid $peach
-	
-	li
-		text-align: center
-		display: inline-block
-		display: table-cell
-	
-	a
-		color: $blumarin
-		font-weight: 900
-		padding: $box-pad/2 0
 		display: block
-		+transition(200ms)
-		&:hover
-			background-color: $blumarin
-			color: white
 	
 	select
 		&:focus
@@ -203,20 +218,8 @@ nav.ctg
 		background-position: right 5px
 		background-repeat: no-repeat
 
-
-	@media screen and (min-width: $container-sm)
-		select
-			display: block
-	
-	@media screen and (min-width: $container-big)
-		select
-			display: none
-		ul
-			display: table
-
 // Custom select
-
-
+// --------------------------------------
 ul.startups
 	+clearfix
 	display: block
@@ -225,9 +228,6 @@ ul.startups
 		float: left
 		width: 100%
 		position: relative
-		border-bottom: 2px solid $peach
-		a
-			color: $blumarin
 		
 		> div
 			+stretch
@@ -240,35 +240,52 @@ ul.startups
 				a
 					vertical-align: middle
 					display: table-cell
+					width: 100%
 
 		&:before
 			content: ""
 			display: block
 			padding-top: 100%
-
-		// left: -2px
-		// position: relative
-		// display: inline-block
-		// width: 100%
-		
-		@media screen and (min-width: $container-md)
+		@media screen and (min-width: $container-xs)
 			width: (100 / 2) * 1%
-			left: -2px
-			border-left: 2px solid $peach
-		
-		@media screen and (min-width: $container-big)
+		// @media screen and (min-width: $container-sm)
+		// 	width: (100 / 2) * 1%
+		@media screen and (min-width: $container-md)
 			width: (100 / 3) * 1%
-		@media screen and (min-width: $container-lg)
+		@media screen and (min-width: $container-big)
 			width: (100 / 4) * 1%
-		@media screen and (min-width: $container-max)
-			width: (100 / 5) * 1%			
+		@media screen and (min-width: $container-lg)
+			width: (100 / 5) * 1%
+		// @media screen and (min-width: $container-max)
+		// 	width: (100 / 5) * 1%			
 
+	a
+		display: block
+		color: white
+		font-size: 1.5em
+
+		strong
+			+stretch
+			font-weight: normal
+			padding: 45% $box-pad/2 0
+			display: block
+			background: $blumarin
+			+transition(200ms)
+			opacity: 0
+			z-index: 3
+
+		&:hover
+			strong
+				opacity: 1
+	
 	img
+		z-index: 2
+		+desaturate
 		max-width: 100px
 
+
 #content
-	&.margintop
-		margin-top: $navtop
+	
 
 
 
@@ -425,4 +442,48 @@ $blue: rgb(69, 113, 236)
 .control-inline label
 	display: inline
 	position: relative
+
+
+#indicator
+	padding: $box-pad/2
+	position: fixed
+	top: 0
+	left: 0
+
+
+// STARTUP page
+.st-name
+	display: block
+	text-align: center
+	padding: $box-pad * 2
+	background: fade-out($blumarin, .1)
+	color: #fff
+
+.st-info
+	+clearfix
+	p
+		@media screen and (min-width: $container-big)
+		padding-right: $box-pad * 2
+
+ul.st-det
+	&, li
+		display: block
+	li
+		line-height: $box-pad
+	
+.st-logo
+	img
+		max-width: 100px
+
+.fl
+	float: left
+
+.fr
+	float: right
+
+
+
+
+
+
 

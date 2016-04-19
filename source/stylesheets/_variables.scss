@@ -16,21 +16,17 @@ $link-hover-decoration:      none !default;
 
 // Breakpoints
 $container-max: 1200px;
-$container-xl: 1000px;
-$container-lg: 800px;
-$container-big: 600px;
-$container-md: 500px;
-$container-sm: 320px;
-$container-xs: 300px;
+$container-lg: 1000px;
+$container-big: 800px;
+$container-md: 600px;
+$container-sm: 500px;
+$container-xs: 380px;
 
 //
 $box-pad: 30px;
 
 // Navbar Variables
 $nav-height: 60px;
-
-$navtop: 350px;
-$navsmall: 60px;
 
 
 // Colors 
@@ -39,32 +35,37 @@ $dirt: #e1dad8;
 $blumarin: #3a3b73;
 
 
-
-
+#indicator {
+	padding: $box-pad / 2
+	+place(fixed, 0, auto, auto, 0)
+}
 
 // debug kit
-* {
-	outline: 1px dotted fade-out(black, 0.5);
-
-	@media screen and (min-width: $container-max) {
-		outline: 1px dotted fade-out(blue, 0.5);
-	}
-	@media screen and (min-width: $container-xl) {
-		outline: 1px dotted fade-out(green, 0.5);
-	}
-	@media screen and (min-width: $container-lg) {
-		outline: 1px dotted fade-out(olive, 0.5);
-	}
-	@media screen and (min-width: $container-big) {
-		outline: 1px dotted fade-out(orange, 0.5);
-	}
-	@media screen and (min-width: $container-md) {
-		outline: 1px dotted fade-out(red, 0.5);
-	}
-	@media screen and (min-width: $container-sm) {
-		outline: 1px dotted fade-out(red, 0.5);
-	}
-	@media screen and (min-width: $container-xs) {
-		outline: 1px dotted fade-out(red, 0.5);
-	}
-}
+// * {
+// 	outline: 1px dotted fade-out(black, 0.5);
+// 	#indicator { background: fade-out(blue, 0.5)}
+// 	@media screen and (min-width: $container-xs) {
+// 		#indicator { background: fade-out(blue, 0.5)}
+// 		outline: 1px dotted fade-out(blue, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-sm) {
+// 		#indicator { background: fade-out(green, 0.5)}
+// 		outline: 1px dotted fade-out(green, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-md) {
+// 		#indicator { background: fade-out(olive, 0.5)}
+// 		outline: 1px dotted fade-out(olive, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-big) {
+// 		#indicator { background: fade-out(orange, 0.5)}
+// 		outline: 1px dotted fade-out(orange, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-lg) {
+// 		#indicator { background: fade-out(red, 0.5)}
+// 		outline: 1px dotted fade-out(pink, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-max) {
+// 		#indicator { background: fade-out(red, 0.5)}
+// 		outline: 1px dotted fade-out(red, 0.5);
+// 	}
+// }
