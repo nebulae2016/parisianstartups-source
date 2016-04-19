@@ -49,8 +49,26 @@ javascript:
           input.fld type="number" min="0" step="1" name="employee_count" id="employee_count" required=""
     
         .group
-          label What domain does your startup operate in? (seperated by comma)
-          input.fld name="market_domain" id="market_domain" required=""
+          label What domain does your startup operate in?
+          select.fld name="market_domain" id="market_domain" required=""
+            option value="food" Food
+            option value="vr/ar" Virtual Reality / Augmented Reality
+            option value="transport" Transport
+            option value="finance" Finance
+            option value="tech" Tech
+            option value="music" Music
+            option value="ai" Artificial Intelligence
+            option value="social" Social
+            option value="communication" Communication
+            option value="energy" Energy
+            option value="healthcare" Healthcare
+            option value="nonprofit" Non Profit
+            option value="security" Security
+            option value="education" Education
+            option value="urbanism" Urbanism
+            option value="arts/crafts" Arts & Crafts
+            option value="enterprise solutions" Enterprise Solutions
+            option value="other" Other
 
         .group.textarea
           label company summary - What does your startup do ?
@@ -75,10 +93,3 @@ javascript:
 
       .group
         input.btn type="submit" name="commit" value="Send" disabled="disabled"
-
-
-
-
-
-
-
