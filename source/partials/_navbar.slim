@@ -15,8 +15,15 @@ nav#navbar
 		
 		.util
 			ul
-				li =link_to image_tag('twitter_ico.svg', :alt => 'twitter'), 'http://twitter.com/parisianstartups'
-				li =link_to image_tag('fb_ico.svg', :alt => 'facebook'), 'http://facebook.com/parisianstartups'
-				li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
-				/ li =link_to image_tag('newsletter_ico.svg', :alt => 'newsletter'), 'newsletter'
+				li =link_to 'http://twitter.com/parisianstartups' do
+					svg viewBox="0 0 13.5 11.2": use xlink:href="#icon-twitter"
+
+				li =link_to 'http://facebook.com/parisianstartups' do
+					svg viewBox="0 0 8 16": use xlink:href="#icon-facebook"
+				
+				li =link_to 'newsletter' do
+					svg viewBox="0 0 1280 900": use xlink:href="#icon-mail"
+				
 				li.submit =link_to 'Add Yours', 'submit'
+
+	= partial 'partials/icons'

@@ -21,6 +21,8 @@ body
 	color: $blumarin
 	background-size: 23px 23px
 	font-family: $font-family-base
+	font-size:  $font-size-base
+	line-height: $line-height-base
 	@media screen and (max-width: $container-max)
 		padding-left: $box-pad/4
 		padding-right: $box-pad/4
@@ -201,7 +203,8 @@ header#header
 				top: 2px
 				left: 2px
 				box-shadow: 0px 0px 0px $dirt
-			img
+			svg
+				fill: #FFF
 				+center-block
 				height: 23px
 		&:last-child
@@ -491,6 +494,7 @@ $blue: rgb(69, 113, 236)
 	padding-top: $box-pad
 	p
 		@media screen and (min-width: $container-big)
+		margin-top: 0
 		padding-right: $box-pad * 2
 
 ul.st-det
@@ -503,6 +507,33 @@ ul.st-det
 	img
 		max-width: 100px
 
+.st-det
+	li
+		line-height: 1.4em
+	
+	svg
+		fill: $blumarin
+		margin-right: $box-pad / 2 
+		display: inline-block
+		vertical-align: middle
+		width: 20px
+	a
+		&:hover
+			border-bottom: 2px solid transparent
+		color: $blumarin
+		border-bottom: 2px solid
+		+transition(200ms, linear)
+
+.st-twitter
+	display: block
+	a
+		+background-image('fb_ico.svg')
+		background-size: 20px 20px
+		padding-left: 40px
+
+svg.hide
+	// just in case
+	display: none
 
 
 

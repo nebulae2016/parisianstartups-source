@@ -11,7 +11,12 @@ header.st-name
 	.col.sm-w4.w6
 		ul.st-det
 			li.st-logo= image_tag logo_url
-			li.st-url= link_to strip_link(website_url), website_url
-			li.st-twitter= link_to strip_link(twitter_url), twitter_url
-			li.st-address= address
-
+			li
+				svg viewBox="0 0 24 24": use xlink:href="#icon-globe"
+				= link_to strip_link(website_url), website_url, :target => '_blank'
+			li
+				svg viewBox="0 0 13.5 11.2": use xlink:href="#icon-twitter"
+				= link_to strip_link(twitter_url), twitter_url, :target => '_blank'
+			li
+				svg viewBox="0 0 24 24": use xlink:href="#icon-location"
+				= address
