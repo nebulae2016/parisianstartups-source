@@ -34,9 +34,8 @@ end
 # Helpers
 ###
 
-require "lib/startup_template_helpers"
-helpers StartupTemplateHelpers
-
+require "lib/view_helpers"
+helpers ViewHelpers
 
 ###
 # Generate startup pages dynamically
