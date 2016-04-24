@@ -1,4 +1,4 @@
-module StartupTemplateHelpers
+module ViewHelpers
   def startup_title_helper
     if current_page.locals[:name]
       current_page.locals[:name] + " - " + data.site.title
@@ -65,5 +65,8 @@ module StartupTemplateHelpers
 		result = twitter_stripped
 		return result
   end
-    
+
+	def root_url(rel_link)
+		"http://parisianstartups.com/#{rel_link}"
+	end
 end
