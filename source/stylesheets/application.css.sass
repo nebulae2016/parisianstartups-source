@@ -210,16 +210,14 @@ header#header
 	height: 48px
 	position: relative
 	overflow: hidden
-	
 	float: left
 	margin-top: 6px
 	margin-left: 6px
 	width: 135px
-	// font-weight normal
+	
 	@media screen and (min-width: $container-xs)
 		margin-left: $box-pad/2
 		width: 145px
-		// font-weight: bold
 
 	border: 2px solid $blumarin
 	background: white
@@ -239,6 +237,9 @@ header#header
 			left: 0
 		
 		a
+			&:focus,
+			&:active
+				background: white
 			&.active
 				// outline: 3px solid red
 			&:hover
