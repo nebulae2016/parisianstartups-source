@@ -1,24 +1,17 @@
 javascript:
-	$('body').scrollspy({ target: '#categs' });
+	$('body').scrollspy({ target: '#categs' })
 
 nav#navbar
 	.wrap
 		= link_to image_tag('logo.svg'), '/', :class => 'logo'
-		
-		#categs.ctg.dropdown
-			button type="button" id="listcateg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" INDUSTRY
-			ul.nav role="tablist" aria-labelledby="listcateg"
-				li =link_to 'FOOD', '#food'
-				li =link_to 'FINANCE', '#finance'
-				li =link_to 'TECH', '#tech'
-				li =link_to 'FASHION', '#FASHION'
-				li =link_to 'SPORT', '#SPORT'
-				li =link_to 'DESIGN', '#DESIGN'
-				li =link_to 'MEDIA', '#MEDIA'
-				li =link_to 'JOBS', '#JOBS'
-				li =link_to 'SOCIAL', '#SOCIAL'		
-		
-		.util
+    
+    #categs.ctg.dropdown
+      button#listcateg type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+      ul.nav role="tablist" aria-labelledby="listcateg"
+        - data.categories.each do |c|
+          li
+            = link_to c.cat, nav_anchor_helper(current_page.url, c.cat)
+    .util
 			ul
 				li =link_to 'http://twitter.com/parisianstartups' do
 					svg viewBox="0 0 13.5 11.2": use xlink:href="#icon-twitter"

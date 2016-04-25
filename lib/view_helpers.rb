@@ -69,4 +69,21 @@ module ViewHelpers
 	def root_url(rel_link)
 		"http://parisianstartups.com/#{rel_link}"
 	end
+
+	require 'open-uri'
+	require 'JSON'
+
+	def startups_in_domain(domain)
+		startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
+		startups.select!{|s| s["market_domain"] == domain }
+	end
+
+	def nav_anchor_helper(current_url, target)
+		target_link = target.upcase
+		if current_url == "/"
+			return "##{target_link}"
+		else
+			return "/##{target_link}"
+		end
+	end
 end

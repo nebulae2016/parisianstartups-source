@@ -53,24 +53,8 @@ section#addstartup
         .group
           label Domain
           select.fld name="market_domain" id="market_domain" required=""
-            option value="food" Food
-            option value="vr/ar" Virtual Reality / Augmented Reality
-            option value="transport" Transport
-            option value="finance" Finance
-            option value="tech" Tech
-            option value="music" Music
-            option value="ai" Artificial Intelligence
-            option value="social" Social
-            option value="communication" Communication
-            option value="energy" Energy
-            option value="healthcare" Healthcare
-            option value="nonprofit" Non Profit
-            option value="security" Security
-            option value="education" Education
-            option value="urbanism" Urbanism
-            option value="arts/crafts" Arts & Crafts
-            option value="enterprise solutions" Enterprise Solutions
-            option value="other" Other
+            - data.categories.each do |c|
+              option value="#{c.cat}" = c.val
 
       .group.textarea
         label What does your startup do ?

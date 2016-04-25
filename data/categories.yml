@@ -1,0 +1,18 @@
+- transport:
+  cat: transport
+  val: Transport
+- finance:
+  cat: finance
+  val: Finance
+- tech:
+  cat: tech
+  val: Tech
+- music:
+  cat: music
+  val: Music
+- ai:
+  cat: ai
+  val: Artificial Intelligence
+- loremipsum:
+  cat: lorem-ipsum
+  val: Testing
