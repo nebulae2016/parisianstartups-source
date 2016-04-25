@@ -6,11 +6,12 @@ nav#navbar
 		= link_to image_tag('logo.svg'), '/', :class => 'logo'
     
     #categs.ctg.dropdown
-      button#listcateg type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+      button id="listcateg" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" INDUSTRY
       ul.nav role="tablist" aria-labelledby="listcateg"
         - data.categories.each do |c|
           li
             = link_to c.cat, nav_anchor_helper(current_page.url, c.cat)
+
     .util
 			ul
 				li =link_to 'http://twitter.com/parisianstartups' do

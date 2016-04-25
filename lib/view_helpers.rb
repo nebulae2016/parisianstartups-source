@@ -79,7 +79,7 @@ module ViewHelpers
 	end
 
 	def nav_anchor_helper(current_url, target)
-		target_link = target.upcase
+		target_link = target
 		if current_url == "/"
 			return "##{target_link}"
 		else

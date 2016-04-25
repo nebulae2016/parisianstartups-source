@@ -13,6 +13,3 @@
 - ai:
   cat: ai
   val: Artificial Intelligence
-- loremipsum:
-  cat: lorem-ipsum
-  val: Testing

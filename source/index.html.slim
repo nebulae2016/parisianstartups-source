@@ -6,7 +6,7 @@ header#header
 
 section#content
   - data.categories.each do |c|
-    h2 class="#{c.cat}" 
+    h2 id="#{c.cat}" 
       |Parisian Startups in 
       = c.val
     ul.startups
