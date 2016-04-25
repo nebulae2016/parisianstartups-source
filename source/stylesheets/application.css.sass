@@ -210,10 +210,17 @@ header#header
 	height: 48px
 	position: relative
 	overflow: hidden
-	width: 145px
+	
 	float: left
 	margin-top: 6px
-	margin-left: $box-pad / 2
+	margin-left: 6px
+	width: 135px
+	// font-weight normal
+	@media screen and (min-width: $container-xs)
+		margin-left: $box-pad/2
+		width: 145px
+		// font-weight: bold
+
 	border: 2px solid $blumarin
 	background: white
 
@@ -242,13 +249,15 @@ header#header
 			display: block
 			padding: 10px
 			color: $blumarin
-			font-weight: bold
+			// @media screen and (min-width: $container-xs)
+				// font-weight: bold
 			width: 100%
 
 	ul
 		text-align: left
 		display: block
-		font-weight: bold
+		@media screen and (min-width: $container-xs)
+			font-weight: bold
 		
 		&:before
 			content: 'INDUSTRY'
@@ -266,7 +275,9 @@ ul.startups
 	display: block
 	border-right: 1px solid $blumarin
 	border-bottom: 1px solid $blumarin
+	box-shadow: inset 1px 1px 0px $blumarin
 	li
+		// box-shadow: 0px 1px 0px $blumarin
 		box-shadow: inset 1px 1px 0px $blumarin
 		float: left
 		width: 100%
