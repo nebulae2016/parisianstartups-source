@@ -8,16 +8,16 @@ nav#navbar
 		#categs.ctg.dropdown
 			button type="button" id="listcateg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" INDUSTRY
 			ul.nav role="tablist" aria-labelledby="listcateg"
-				li =link_to 'FOOD', '#food'
-				li =link_to 'FINANCE', '#finance'
-				li =link_to 'TECH', '#tech'
-				li =link_to 'FASHION', '#FASHION'
-				li =link_to 'SPORT', '#SPORT'
-				li =link_to 'DESIGN', '#DESIGN'
-				li =link_to 'MEDIA', '#MEDIA'
-				li =link_to 'JOBS', '#JOBS'
-				li =link_to 'SOCIAL', '#SOCIAL'		
-		
+				li = current_page.url == "/" ? link_to('FOOD', '#food') : link_to('FOOD', '/#food')
+				li = current_page.url == "/" ? link_to('FINANCE', '#finance') : link_to('FINANCE', '/#finance')
+				li = current_page.url == "/" ? link_to('TECH', '#tech') : link_to('TECH', '#tech')
+				li = current_page.url == "/" ? link_to('FASHION', '#FASHION') : link_to('FASHION', '/#FASHION')
+				li = current_page.url == "/" ? link_to('SPORT', '#SPORT') : link_to('SPORT', '/#SPORT')
+				li = current_page.url == "/" ? link_to('DESIGN', '#DESIGN') : link_to('DESIGN', '/#DESIGN')
+				li = current_page.url == "/" ? link_to('MEDIA', '#MEDIA') : link_to('MEDIA', '/#MEDIA')
+				li = current_page.url == "/" ? link_to('JOBS', '#JOBS') : link_to('JOBS', '/#JOBS')
+				li = current_page.url == "/" ? link_to('SOCIAL', '#SOCIAL') : link_to('SOCIAL', '/#SOCIAL')
+
 		.util
 			ul
 				li =link_to 'http://twitter.com/parisianstartups' do

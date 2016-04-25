@@ -29,6 +29,7 @@ body
 	font-family: $font-family-base
 	font-size:  $font-size-base
 	line-height: $line-height-base
+	background-color: $body-bg
 	@media screen and (max-width: $container-max)
 		padding-left: $box-pad/4
 		padding-right: $box-pad/4
@@ -91,7 +92,11 @@ html:not(.no-touchevents).fixed header#header nav.visible
 
 // -------------------------------------------------------- //
 nav#navbar
-	background: white
+	@media screen and (max-width: $container-max)
+		padding-left: $box-pad/4
+		padding-right: $box-pad/4
+	
+	background: $body-bg
 	height: $nav-height
 	z-index: 9999
 	position: fixed
@@ -112,7 +117,7 @@ a.logo
 header#header
 	padding-bottom: $box-pad/2
 	.banner
-		padding: $box-pad 0
+		padding-top: $box-pad
 		// background: fade-out(olive, 0.5)
 		// img
 			// visibility: hidden
@@ -503,7 +508,7 @@ textarea.fld
 		border: 1px solid red
 	
 	&.valid	
-		border: 1px solid green
+		// border: 1px solid green
 
 
 

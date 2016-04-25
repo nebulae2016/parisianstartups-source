@@ -5,7 +5,7 @@ $font-size-base:     18px !default;
 $font-family-base:  'Graphik-Regular', sans-serif;
 $line-height-base: 		1.4;
 $color-base:     			#000000;
-$body-bg: 		 	 			#FFFFFF;
+$body-bg: 		 	 			#f2f2f2;
 $line-height-base:		1.5em !default;
 
 // Links
@@ -38,31 +38,31 @@ $blumarin: #3a3b73;
 
 
 // debug kit
-* {
-	outline: 1px dotted fade-out(black, 0.5);
-	#indicator { background: fade-out(blue, 0.5)}
-	@media screen and (min-width: $container-xs) {
-		#indicator { background: fade-out(blue, 0.5)}
-		outline: 1px dotted fade-out(blue, 0.5);
-	}
-	@media screen and (min-width: $container-sm) {
-		#indicator { background: fade-out(green, 0.5)}
-		outline: 1px dotted fade-out(green, 0.5);
-	}
-	@media screen and (min-width: $container-md) {
-		#indicator { background: fade-out(olive, 0.5)}
-		outline: 1px dotted fade-out(olive, 0.5);
-	}
-	@media screen and (min-width: $container-big) {
-		#indicator { background: fade-out(orange, 0.5)}
-		outline: 1px dotted fade-out(orange, 0.5);
-	}
-	@media screen and (min-width: $container-lg) {
-		#indicator { background: fade-out(red, 0.5)}
-		outline: 1px dotted fade-out(pink, 0.5);
-	}
-	@media screen and (min-width: $container-max) {
-		#indicator { background: fade-out(red, 0.5)}
-		outline: 1px dotted fade-out(red, 0.5);
-	}
-}
+// * {
+// 	outline: 1px dotted fade-out(black, 0.5);
+// 	#indicator { background: fade-out(blue, 0.5)}
+// 	@media screen and (min-width: $container-xs) {
+// 		#indicator { background: fade-out(blue, 0.5)}
+// 		outline: 1px dotted fade-out(blue, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-sm) {
+// 		#indicator { background: fade-out(green, 0.5)}
+// 		outline: 1px dotted fade-out(green, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-md) {
+// 		#indicator { background: fade-out(olive, 0.5)}
+// 		outline: 1px dotted fade-out(olive, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-big) {
+// 		#indicator { background: fade-out(orange, 0.5)}
+// 		outline: 1px dotted fade-out(orange, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-lg) {
+// 		#indicator { background: fade-out(red, 0.5)}
+// 		outline: 1px dotted fade-out(pink, 0.5);
+// 	}
+// 	@media screen and (min-width: $container-max) {
+// 		#indicator { background: fade-out(red, 0.5)}
+// 		outline: 1px dotted fade-out(red, 0.5);
+// 	}
+// }
