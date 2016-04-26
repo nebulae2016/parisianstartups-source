@@ -10,10 +10,11 @@ section#content
       |Parisian Startups in 
       = c.val
     ul.startups
-      - startups_in_domain(c.cat).each do |s|
-        li
-          div
+      - if startups = startups_in_domain(c.cat)
+        - startups.each do |s|
+          li
             div
-              = link_to "#{s["name"].downcase.split(" ").join("-")}" do
-                strong =s["name"]
-                =image_tag s["logo_url"]
+              div
+                = link_to "#{s["name"].downcase.split(" ").join("-")}" do
+                  strong =s["name"]
+                  =image_tag s["logo_url"]
