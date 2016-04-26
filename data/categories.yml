@@ -13,3 +13,57 @@
 - ai:
   cat: ai
   val: Artificial Intelligence
+- ai:
+  cat: social
+  val: Social
+- ai:
+  cat: communication
+  val: Communication
+- ai:
+  cat: vr/ar
+  val: Virtual Reality / Augmented Reality
+- ai:
+  cat: food
+  val: Food
+- ai:
+  cat: fashion
+  val: Fashion
+- ai:
+  cat: sport
+  val: Sport
+- ai:
+  cat: design
+  val: Design
+- ai:
+  cat: media
+  val: Media
+- ai:
+  cat: jobs
+  val: Jobs
+- ai:
+  cat: energy
+  val: Energy
+- ai:
+  cat: healthcare
+  val: Healthcare
+- ai:
+  cat: nonprofit
+  val: Nonprofit
+- ai:
+  cat: security
+  val: Security
+- ai:
+  cat: education
+  val: Education
+- ai:
+  cat: urbanism
+  val: Urbanism
+- ai:
+  cat: arts&crafts
+  val: Arts & Crafts
+- ai:
+  cat: enterprise
+  val: Enterprise Solutions
+- ai:
+  cat: other
+  val: Other
