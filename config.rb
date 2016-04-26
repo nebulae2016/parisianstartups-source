@@ -76,3 +76,10 @@ activate :deploy do |deploy|
   deploy.build_before = true
   deploy.commit_message = "Automated build & deploy at #{Time.now}"
 end
+
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-76972340-1'
+  ga.domain_name = 'parisianstartups.com'
+  ga.enhanced_link_attribution = true
+  ga.development = false
+end
