@@ -73,9 +73,17 @@ module ViewHelpers
 	require 'open-uri'
 	require 'json'
 
+	def fetch_startups
+		@startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
+		@fetch_time = Time.now
+	end
+
 	def startups_in_domain(domain)
-		startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
-		startups.select!{|s| s["market_domain"] == domain }
+		return @startups.select{|s| s["market_domain"] == domain }
+	end
+
+	def helper_test
+		return "yalalallaaaa"
 	end
 
 	def nav_anchor_helper(current_url, target)

@@ -10,6 +10,7 @@ section#content
       |Parisian Startups in 
       = c.val
     ul.startups
+      - fetch_startups
       - if startups = startups_in_domain(c.cat)
         - startups.each do |s|
           li
