@@ -18,5 +18,7 @@ section#content
             div
               div
                 = link_to "#{s["name"].downcase.split(" ").join("-")}" do
-                  strong =s["name"]
+                  strong 
+                    =s["name"]
+                    / =s["summary"].first(80) // find a way to show just a bit of the summary on rollover.
                   =image_tag s["logo_url"]
