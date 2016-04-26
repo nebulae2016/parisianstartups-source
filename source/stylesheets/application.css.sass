@@ -29,6 +29,7 @@ body
 	font-family: $font-family-base
 	font-size:  $font-size-base
 	line-height: $line-height-base
+	background-color: $body-bg
 	@media screen and (max-width: $container-max)
 		padding-left: $box-pad/4
 		padding-right: $box-pad/4
@@ -91,7 +92,11 @@ html:not(.no-touchevents).fixed header#header nav.visible
 
 // -------------------------------------------------------- //
 nav#navbar
-	background: white
+	@media screen and (max-width: $container-max)
+		padding-left: $box-pad/4
+		padding-right: $box-pad/4
+	
+	background: $body-bg
 	height: $nav-height
 	z-index: 9999
 	position: fixed
@@ -112,7 +117,7 @@ a.logo
 header#header
 	padding-bottom: $box-pad/2
 	.banner
-		padding: $box-pad 0
+		padding-top: $box-pad
 		// background: fade-out(olive, 0.5)
 		// img
 			// visibility: hidden
@@ -205,10 +210,15 @@ header#header
 	height: 48px
 	position: relative
 	overflow: hidden
-	width: 145px
 	float: left
 	margin-top: 6px
-	margin-left: $box-pad / 2
+	margin-left: 6px
+	width: 135px
+	
+	@media screen and (min-width: $container-xs)
+		margin-left: $box-pad/2
+		width: 145px
+
 	border: 2px solid $blumarin
 	background: white
 
@@ -227,6 +237,9 @@ header#header
 			left: 0
 		
 		a
+			&:focus,
+			&:active
+				background: white
 			&.active
 				// outline: 3px solid red
 			&:hover
@@ -237,13 +250,15 @@ header#header
 			display: block
 			padding: 10px
 			color: $blumarin
-			font-weight: bold
+			// @media screen and (min-width: $container-xs)
+				// font-weight: bold
 			width: 100%
 
 	ul
 		text-align: left
 		display: block
-		font-weight: bold
+		@media screen and (min-width: $container-xs)
+			font-weight: bold
 		
 		&:before
 			content: 'INDUSTRY'
@@ -261,7 +276,9 @@ ul.startups
 	display: block
 	border-right: 1px solid $blumarin
 	border-bottom: 1px solid $blumarin
+	box-shadow: inset 1px 1px 0px $blumarin
 	li
+		// box-shadow: 0px 1px 0px $blumarin
 		box-shadow: inset 1px 1px 0px $blumarin
 		float: left
 		width: 100%
@@ -503,7 +520,7 @@ textarea.fld
 		border: 1px solid red
 	
 	&.valid	
-		border: 1px solid green
+		// border: 1px solid green
 
 
 
