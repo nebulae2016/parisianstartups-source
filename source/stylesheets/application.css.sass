@@ -1,20 +1,26 @@
+@import 'mixins'
+
++lefont('Graphik-Regular')
++lefont('Graphik-Bold')
+
 @import 'normalize'
 @import 'variables'
-@import 'mixins'
+
+
 
 a
 	text-decoration: none
-
-li
-	list-style-type: none
 
 ul
 	padding: 0
 	margin: 0
 
+li
+	list-style-type: none
+
 body,
 html
-	height: 100%
+	position: relative
 
 fieldset
 	padding: 0
@@ -26,10 +32,11 @@ body
 	position: relative
 	color: $blumarin
 	background-size: 23px 23px
-	font-family: $font-family-base
+	font-family: "Graphik-Regular", sans-serif
 	font-size:  $font-size-base
 	line-height: $line-height-base
 	background-color: $body-bg
+	-webkit-font-smoothing: antialiased
 	@media screen and (max-width: $container-max)
 		padding-left: $box-pad/4
 		padding-right: $box-pad/4
@@ -41,6 +48,9 @@ section#content
 	margin-left: auto
 	margin-right: auto
 
+// typography -------------------------------------------//
+h1, h2
+	font-family: "Graphik-Bold", sans-serif
 
 // Some mixins -------------------------------------------//
 =desaturate
@@ -66,8 +76,6 @@ section#content
 			@for $i from 1 through $cols - 1
 				&.w#{$i}
 					width: ($i * 100/$cols) * 1%
-
-
 
 // -------------------------------------------------------- //
 // SCAFOLDING --------------------------------------------- //
@@ -136,10 +144,10 @@ header#header
 		li
 			&:nth-child(1)
 				display: none
-			&:nth-child(2)
-				display: none
-			&:nth-child(3)
-				display: none
+	// 		&:nth-child(2)
+	// 			display: none
+	// 		&:nth-child(3)
+	// 			display: none
 	
 	li
 		float: left
@@ -172,6 +180,8 @@ header#header
 			margin-right: 0
 			a
 				padding-top: 8px
+				font-size: 0.8em
+				font-family: "Graphik-Bold", sans-serif
 
 .ctg
 	&.dropdown
@@ -229,6 +239,7 @@ header#header
 		display: block
 	
 	li
+		text-transform: uppercase
 		&.active
 			z-index: 0
 			position: absolute
@@ -250,22 +261,22 @@ header#header
 			display: block
 			padding: 10px
 			color: $blumarin
-			// @media screen and (min-width: $container-xs)
-				// font-weight: bold
+			@media screen and (min-width: $container-xs)
+				font-family: "Graphik-Bold", sans-serif
+			
 			width: 100%
 
 	ul
 		text-align: left
 		display: block
 		@media screen and (min-width: $container-xs)
-			font-weight: bold
+			// font-family: 'Graphik-Bold' sans-serif
 		
 		&:before
 			content: 'INDUSTRY'
 			padding: 10px 0px 10px 10px
 			display: block
-		// margin-top: 60px
-
+			font-family: "Graphik-Bold", sans-serif
 
 
 
@@ -523,7 +534,14 @@ textarea.fld
 		// border: 1px solid green
 
 
-
+footer
+	text-align: center
+	padding: $box-pad 0
+	+center-block
+	max-width: $container-max
+	a
+		color: $blumarin
+		font-family: "Graphik-Bold", sans-serif
 
 
 

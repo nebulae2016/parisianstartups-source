@@ -5,13 +5,14 @@ header#header
   .banner =image_tag('header.svg')
 
 section#content
+  - fetch_startups
   - data.categories.each do |c|
-    h2 id="#{c.cat}" 
-      |Parisian Startups in 
-      = c.val
-    ul.startups
-      - fetch_startups
-      - if startups = startups_in_domain(c.cat)
+    - startups = startups_in_domain(c.cat)
+    - if startups.any?
+      h2
+        |Parisian Startups in 
+        = c.val
+      ul.startups id="#{c.cat}"
         - startups.each do |s|
           li
             div

@@ -222,19 +222,19 @@ $prefixes: ("-moz-", "-webkit-", "-ms-", "");
 }
 
 // mixin font
-// @mixin lefont ($somefont) {
-//   @font-face {
-//     font-family: $somefont;
-//     // src: font-url($somefont + '.eot'); /* IE9 Compat Modes */
-//     src: 
-//       font-url($somefont + '.eot') format('embedded-opentype'), /* IE6-IE8 */
-//       // things are shifting rapidly towards WOFF and WOFF2 so we might get away with this 2 only:
-//       font-url($somefont + '.woff2') format('woff2'), /* Super Modern Browsers */ 
-//       font-url($somefont + '.woff') format('woff'), /* Pretty Modern Browsers */
-//       font-url($somefont + '.ttf') format('truetype'), /* Safari, Android, iOS */
-//       font-url($somefont + '.svg#gcsbi') format('svg'); /* Legacy iOS */
-//   } 
-// }
+@mixin lefont ($somefont) {
+  @font-face {
+    font-family: $somefont;
+    // src: font-url($somefont + '.eot'); /* IE9 Compat Modes */
+    src:
+      font-url($somefont + '.eot') format('embedded-opentype'), /* IE6-IE8 */
+      // things are shifting rapidly towards WOFF and WOFF2 so we might get away with this 2 only:
+      font-url($somefont + '.woff2') format('woff2'), /* Super Modern Browsers */ 
+      font-url($somefont + '.woff') format('woff'), /* Pretty Modern Browsers */
+      font-url($somefont + '.ttf') format('truetype'), /* Safari, Android, iOS */
+      font-url($somefont + '.svg#gcsbi') format('svg'); /* Legacy iOS */
+  } 
+}
 // WebKit-style focus
 
 @mixin tab-focus() {

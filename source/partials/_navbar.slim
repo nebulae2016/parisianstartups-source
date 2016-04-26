@@ -8,20 +8,24 @@ nav#navbar
     #categs.ctg.dropdown
       button id="listcateg" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" INDUSTRY
       ul.nav role="tablist" aria-labelledby="listcateg"
-        - data.categories.each do |c|
-          li
-            = link_to c.cat, nav_anchor_helper(current_page.url, c.cat)
+      	- fetch_startups
+      	- data.categories.each do |c|
+      	  - startups = startups_in_domain(c.cat)
+      	  - if startups.any?
+	          li
+	            = link_to c.cat, nav_anchor_helper(current_page.url, c.cat)
+
 
     .util
 			ul
 				li =link_to 'http://twitter.com/parisianstartups' do
 					svg viewBox="0 0 13.5 11.2": use xlink:href="#icon-twitter"
 
-				li =link_to 'http://facebook.com/parisianstartups' do
-					svg viewBox="0 0 8 16": use xlink:href="#icon-facebook"
+				/ li =link_to 'http://facebook.com/parisianstartups' do
+				/ 	svg viewBox="0 0 8 16": use xlink:href="#icon-facebook"
 				
-				li =link_to 'newsletter' do
-					svg viewBox="0 0 1280 900": use xlink:href="#icon-mail"
+				/ li =link_to 'newsletter' do
+				/ 	svg viewBox="0 0 1280 900": use xlink:href="#icon-mail"
 				
 				li.submit =link_to 'Add Yours', 'submit'
 
