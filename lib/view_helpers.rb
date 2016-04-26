@@ -71,7 +71,7 @@ module ViewHelpers
 	end
 
 	require 'open-uri'
-	require 'JSON'
+	require 'json'
 
 	def startups_in_domain(domain)
 		startups = JSON.load(open("https://nebulae-dashboard.herokuapp.com/startups-index.json"))
