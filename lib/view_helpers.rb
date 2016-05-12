@@ -87,10 +87,6 @@ module ViewHelpers
 		return @startups.select{|s| s["market_domain"] == domain }
 	end
 
-	def helper_test
-		return "yalalallaaaa"
-	end
-
 	def nav_anchor_helper(current_url, target)
 		target_link = target
 		if current_url == "/"
