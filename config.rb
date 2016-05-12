@@ -69,7 +69,7 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
 	# don't hash the fonts
-	activate :asset_hash, ignore: Proc.new {|x| x.include?('.woff') || x.include?('.ttf') || x.include?('.eot') || x.include?('sharepay') || x.include?('tables')}
+	activate :asset_hash, ignore: Proc.new {|x| x.include?('.woff') || x.include?('.ttf') || x.include?('.eot') || x.include?('static')}
 end
 
 activate :deploy do |deploy|
