@@ -13,13 +13,13 @@
 - ai:
   cat: ai
   val: Artificial Intelligence
-- ai:
+- social:
   cat: social
   val: Social
-- ai:
+- communication:
   cat: communication
   val: Communication
-- ai:
+- virtualreality:
   cat: vr/ar
   val: Virtual Reality / Augmented Reality
 - ai:
@@ -65,5 +65,9 @@
   cat: enterprise
   val: Enterprise Solutions
 - ai:
+  cat: retail
+  val: Retail
+- ai:
   cat: other
   val: Other
+
